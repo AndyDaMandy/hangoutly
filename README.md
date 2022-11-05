@@ -1,24 +1,7 @@
-# README
+#Hangoutly
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Ruby on Rails application where you and your friends are randomly assigned hangout times! You can set preferences, such as online or in-person, times, etc.
 
-Things you may want to cover:
+Users can create groups and invite friends. Friends can join groups and these groups will have events assigned to them. I'd like to set up a google calendar API as well to create calendar events.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This will be deployed on Fly.io with postgresql
