@@ -4,8 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :username, uniqueness: true
-  has_many :friend
-  has_many :friends_list
+  has_many :friends
   #https://github.com/heartcombo/devise/wiki/How-To:-Allow-users-to-sign-in-with-something-other-than-their-email-address
   #for troubleshooting username info
   # has_many friends,
