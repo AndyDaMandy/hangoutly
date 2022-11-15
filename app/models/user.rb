@@ -6,4 +6,6 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
   #https://github.com/heartcombo/devise/wiki/How-To:-Allow-users-to-sign-in-with-something-other-than-their-email-address
   #for troubleshooting username info
+  # has_many friends,
+  # friends belong to :user
 end
