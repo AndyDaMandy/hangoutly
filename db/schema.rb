@@ -10,24 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_16_000337) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_16_133311) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "friends", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_friends_on_user_id"
-  end
-
-  create_table "friends_lists", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "friend_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["friend_id"], name: "index_friends_lists_on_friend_id"
-    t.index ["user_id"], name: "index_friends_lists_on_user_id"
+  create_table "friendships", id: false, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "friend_user_id"
+    t.index ["friend_user_id", "user_id"], name: "index_friendships_on_friend_user_id_and_user_id", unique: true
+    t.index ["user_id", "friend_user_id"], name: "index_friendships_on_user_id_and_friend_user_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -44,7 +35,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_16_000337) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
-  add_foreign_key "friends", "users"
-  add_foreign_key "friends_lists", "friends"
-  add_foreign_key "friends_lists", "users"
 end
