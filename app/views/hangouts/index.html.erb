@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Hangouts</h1>
+
+<div id="hangouts">
+  <% @hangouts.each do |hangout| %>
+    <%= render hangout %>
+    <p>
+      <%= link_to "Show this hangout", hangout %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New hangout", new_hangout_path %>

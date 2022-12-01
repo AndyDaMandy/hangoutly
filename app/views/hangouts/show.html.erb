@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @hangout %>
+
+<div>
+  <%= link_to "Edit this hangout", edit_hangout_path(@hangout) %> |
+  <%= link_to "Back to hangouts", hangouts_path %>
+
+  <%= button_to "Destroy this hangout", @hangout, method: :delete %>
+</div>

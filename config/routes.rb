@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :hangouts
   resources :friendships
   devise_for :users
   resources :users, only: [:show]
